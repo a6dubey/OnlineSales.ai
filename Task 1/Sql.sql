@@ -1,0 +1,7 @@
+SELECT d.name AS DEPT_NAME, AVG(s.amount) AS AVG_MONTHLY_SALARY
+FROM Departments d
+JOIN Employees e ON d.ID = e.DEPT_ID
+JOIN Salaries s ON e.ID = s.EMP_ID
+GROUP BY d.name
+ORDER BY AVG_MONTHLY_SALARY DESC
+LIMIT 3;
